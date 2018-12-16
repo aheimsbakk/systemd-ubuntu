@@ -18,11 +18,11 @@ Also known as Fat Docker.
 ## Start systemd-ubuntu
 
     docker run -d --name mydocker \
-		--tmpfs /run \
+        --tmpfs /run \
         --tmpfs /run/lock \
         --tmpfs /tmp \
         -v /sys/fs/cgroup:/sys/fs/cgroup:ro \
-		aheimsbakk/systemd-ubuntu:18.04
+        aheimsbakk/systemd-ubuntu:18.04
 
 ### Examine running docker
 

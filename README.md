@@ -1,6 +1,8 @@
 # What is systemd-ubuntu
 
-This is a base image for running docker with full systemd support.
+This is a base image for running docker with full systemd support. 
+
+Also known as Fat Docker.
 
 ## Tags
 
@@ -10,7 +12,7 @@ This is a base image for running docker with full systemd support.
     - Runs `unattended-upgrades` to keep image up to date. 
     - `logrotate` is enabled.
     - Console login is disabled.
-    - journald logs to memory and redirects to console.
+    - `journald` logs to memory and redirects to console.
     - Extra packages that is installed for getting tools like `ip`, `top`, `ping` and `dig` is `iproute2`, `procps`, `iputils-ping` and ` dnsutils`.
 
 ## Start systemd-ubuntu
@@ -28,7 +30,7 @@ This is a base image for running docker with full systemd support.
 
 ## Caveats
 
-Runs fine on Ubuntu. May be problems on Fedora or non Debain based systems to differences in cgroups.
+Runs fine on Ubuntu. May be problems on Fedora or non Debian based systems to differences in cgroups.
 
 ###### vim: set syn=markdown spell spl=en:
 

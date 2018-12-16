@@ -26,5 +26,9 @@ This is a base image for running docker with full systemd support.
 
     docker exec -ti mydocker bash 
 
+## Caveats
+
+Runs fine on Ubuntu. May be problems on Fedora or non Debain based systems to differences in cgroups.
+
 ###### vim: set syn=markdown spell spl=en:
 

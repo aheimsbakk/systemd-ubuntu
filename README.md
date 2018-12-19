@@ -6,9 +6,9 @@ Also known as Fat Docker.
 
 ## Tags
 
-* `18.10` ([18.10/Dockerfile](https://github.com/aheimsbakk/systemd-ubuntu/18.10/Dockerfile))
+* `18.10` ([18.10/Dockerfile](https://github.com/aheimsbakk/systemd-ubuntu/blob/master/18.10/Dockerfile))
 
-* `18.04` ([18.04/Dockerfile](https://github.com/aheimsbakk/systemd-ubuntu/18.04/Dockerfile))
+* `18.04` ([18.04/Dockerfile](https://github.com/aheimsbakk/systemd-ubuntu/blob/master/18.04/Dockerfile))
 
 ## Ubuntu Fat Docker
 

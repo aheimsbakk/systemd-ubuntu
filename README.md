@@ -15,9 +15,13 @@ Also known as Fat Docker.
 Ubuntu with systemd enabled. 
 
 - Login via console is disabled.
+
 - `cron` is enabled.
+
 - `unattended-upgrades` to keep running docker up to date. 
+
 - `logrotate` to avoid filling up with standard logs.
+
 - `journald` logs to memory and console, max memory for logs is `50M`.
 
 ## Start systemd-ubuntu

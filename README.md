@@ -36,7 +36,7 @@ Example:
 
 ## Caveats
 
-Runs fine on Ubuntu. May be problems on Fedora or non Debian based systems to differences in cgroups.
+Runs fine on Ubuntu. May be problems on Fedora or non Debian based systems due to differences in cgroups.
 
 ###### vim: set syn=markdown spell spl=en:
 

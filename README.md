@@ -1,4 +1,4 @@
-# What is systemd-ubuntu
+# systemd-ubuntu
 
 This is a base image for running docker with full systemd support. 
 
@@ -6,23 +6,25 @@ Also known as Fat Docker.
 
 ## Tags
 
-* `18.04`
+* `18.10` ([18.10/Dockerfile](https://github.com/aheimsbakk/systemd-ubuntu/18.10/Dockerfile))
 
-    - Ubuntu 18.04 with systemd enabled. 
-    - Runs `unattended-upgrades` to keep image up to date. 
-    - `logrotate` is enabled.
-    - Console login is disabled.
-    - `journald` logs to memory and redirects to console.
-    - Extra packages that is installed for getting tools like `ip`, `top`, `ping` and `dig` is `iproute2`, `procps`, `iputils-ping` and ` dnsutils`.
+* `18.04` ([18.04/Dockerfile](https://github.com/aheimsbakk/systemd-ubuntu/18.04/Dockerfile))
+
+## Ubuntu Fat Docker
+
+Ubuntu with systemd enabled. 
+
+- Login via console is disabled.
+- `cron` is enabled.
+- `unattended-upgrades` to keep running docker up to date. 
+- `logrotate` to avoid filling up with standard logs.
+- `journald` logs to memory and console, max memory for logs is `50M`.
 
 ## Start systemd-ubuntu
 
-    docker run -d --name mydocker \
-        --tmpfs /run \
-        --tmpfs /run/lock \
-        --tmpfs /tmp \
-        -v /sys/fs/cgroup:/sys/fs/cgroup:ro \
-        aheimsbakk/systemd-ubuntu:18.04
+Example:
+
+    docker run -d --name mydocker --tmpfs /run --tmpfs /run/lock --tmpfs /tmp -v /sys/fs/cgroup:/sys/fs/cgroup:ro aheimsbakk/systemd-ubuntu:18.04
 
 ### Examine running docker
 

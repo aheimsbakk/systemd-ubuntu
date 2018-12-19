@@ -1,11 +1,9 @@
 #!/bin/bash
 
 
-for version in 18.04
+for directory in */
 do
-    docker build -t systemd-ubuntu:$version \
-        .
+    version=$(basename $directory)
+    docker build -t systemd-ubuntu:$version $directory
 done
 
-# To be used when ARG can be used before FROM
-#--build-arg ubuntu_image="ubuntu:$version" \

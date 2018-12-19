@@ -47,6 +47,5 @@ VOLUME /run /run/lock /tmp /sys/fs/cgroup
 WORKDIR /root
 
 # Start with systemd
-#CMD ["/lib/systemd/systemd", "--system", "--log-target=console", "--log-level=debug"]
 CMD ["/sbin/init"]
 

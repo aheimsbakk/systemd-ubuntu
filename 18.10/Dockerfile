@@ -22,7 +22,6 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Install 
 #   systemd, logrotate and unattended-upgrades
-#   ip, top, ping  and dig for quriosity 
 RUN apt-get update; \
     apt-get install -y systemd logrotate unattended-upgrades; \
     apt-get clean

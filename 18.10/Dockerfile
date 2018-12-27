@@ -22,8 +22,10 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Install 
 #   systemd, logrotate and unattended-upgrades
+##   traceroute, ip, top, ping and dig
 RUN apt-get update; \
     apt-get install -y systemd logrotate unattended-upgrades; \
+#    apt-get install -y traceroute, iproute2 procps iputils-ping dnsutils; \
     apt-get clean
 
 # Keep journal in memory, max 50M

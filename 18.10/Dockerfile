@@ -22,10 +22,8 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Install 
 #   systemd, logrotate and unattended-upgrades
-##   traceroute, ip, top, ping and dig
 RUN apt-get update; \
     apt-get install -y systemd logrotate unattended-upgrades; \
-#    apt-get install -y traceroute, iproute2 procps iputils-ping dnsutils; \
     apt-get clean
 
 # Keep journal in memory, max 50M
@@ -38,6 +36,9 @@ RUN sed -i 's#^.\(ForwardToConsole\).*#\1=yes#' /etc/systemd/journald.conf
 # Remove interactive prompt on console
 RUN systemctl mask getty.target
 
+# Add entrypoint, install packages in APT environment variable
+COPY docker-entrypoint.sh /
+
 # Stop systemd 
 STOPSIGNAL SIGRTMIN+3
 
@@ -47,6 +48,10 @@ VOLUME /run /run/lock /tmp /sys/fs/cgroup
 # When exec to docker, start in /root
 WORKDIR /root
 
+# Install extra packages on start
+ENTRYPOINT ["/docker-entrypoint.sh"]
+
 # Start with systemd
-CMD ["/sbin/init"]
+CMD exec /sbin/init
+
 

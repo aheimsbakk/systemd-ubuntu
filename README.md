@@ -24,11 +24,17 @@ Ubuntu with systemd enabled.
 
 - `journald` logs to memory and console, max memory for logs is `50M`.
 
+### Environment variables
+
+* `APT` 
+
+    List of extra packages to install on start. See example.
+
 ## Start systemd-ubuntu
 
 Example:
 
-    docker run -d --name mydocker --tmpfs /run --tmpfs /run/lock --tmpfs /tmp -v /sys/fs/cgroup:/sys/fs/cgroup:ro aheimsbakk/systemd-ubuntu:18.04
+    docker run -d --name mydocker -e APT=iproute2,procps,iputils-ping,dnsutils,traceroute --tmpfs /run --tmpfs /run/lock --tmpfs /tmp -v /sys/fs/cgroup:/sys/fs/cgroup:ro aheimsbakk/systemd-ubuntu:18.04
 
 ### Examine running docker
 

@@ -17,8 +17,6 @@ build-18.04:
     - docker push "$CI_REGISTRY_IMAGE:18.04"
   only:
     - master
-  environment:
-    name: $CI_PIPELINE_SOURCE
 
 build-18.10:
   stage: build
@@ -28,8 +26,6 @@ build-18.10:
     - docker push "$CI_REGISTRY_IMAGE:18.10"
   only:
     - master
-  environment:
-    name: $CI_PIPELINE_SOURCE
 
 build-18.04-branch:
   stage: build
